@@ -1,40 +1,28 @@
-//class-class ==>extends
-//class-interface ==>implements
-//interface-interface ==>extends
+interface Computer{
+    public abstract void Code();
+}
 
-interface A{
-    int age=10 ;  //every variable inside interface is final and static
-    int area=23;
-    void show();
-    void config();
+class Laptop implements Computer{
+    public void Code(){
+        System.out.println("Code,compile and run...");
+    }
 }
-interface X {
-    void run();
+class Desktop implements Computer{
+    public void Code(){
+        System.out.println("Code,compile and faster....");
+    }
 }
-interface Y extends X{
-
-}
-class B implements A,Y{
-   public void show(){
-     System.out.println("In show");
-   }
-   public void config(){
-     System.out.println("In config");
-   }
-   public void run(){
-    System.out.println("Running.....");
-   }
+class Developer{
+    public void devApp(Computer lap){
+        lap.Code();
+        System.out.println("Developing app.....");
+    }
 }
 class Demo{
      public static void main(String[] args) {
-       A obj;
-       obj=new B();
-       obj.show();
-       obj.config();
-       
-       X obj1=new B();
-       obj1.run();
-    //    A.area=233;
-       System.out.println(A.area);
+        Computer lap =new Laptop();
+        Computer desk=new Desktop();
+       Developer dev=new Developer();
+       dev.devApp(desk);
      }
 }
