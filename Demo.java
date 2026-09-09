@@ -1,31 +1,22 @@
-abstract class Car{
-    public abstract void drive();
-    public abstract void fly();
-    public void playMusic(){
-        System.out.println("Play Music");
+class A{
+    int a;
+    public void show(){
+        System.out.println("showing....");
     }
-}
-
-abstract class WagonR extends Car{
-   public void drive(){
-    System.out.println("Driving......");
-   }
-   
-}
-
-class UpdatedWagonR extends WagonR{  //concrete class
-
-    
-    public void fly() {
-       System.out.println("WagonR is flying");
+    static  class B{  //there should be only inner class static ho sakti baki outer class ko static nahi bana saktay
+        public void config(){
+            System.out.println("config......");
+        }
     }
-    
 }
 class Demo{
      public static void main(String[] args) {
-        Car car=new UpdatedWagonR();
-        car.drive();
-        car.playMusic();
-        car.fly();
+       A obj=new A();
+       obj.show();
+
+    //    A.B obj1=obj.new B();
+       A.B obj1=new A.B();
+       obj1.config();
+       
      }
 }
