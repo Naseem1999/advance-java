@@ -1,37 +1,28 @@
 
-class NaseemException extends  Exception{
-    public NaseemException(String message){
-          super(message);
+class A{
+    // public void show(){
+    //     try{
+    //      Class.forName("Calc");
+    //     }catch(ClassNotFoundException e){
+    //        System.out.println("Not able to find class");
+    //     }
+    // }
+    public void show() throws ClassNotFoundException{
+         Class.forName("Calc");
+      
     }
 }
 class Demo{
+    static {
+        System.out.println("class loaded");
+    }
      public static void main(String[] args) {
-        // int i=0;
-        // int j=18/i;
-        // System.out.println(j);
-        // System.out.println("Bye");
-
-        int i=20;
-        int j=0;
-       
-        try{
-           j=18/i;
-        //    if(j==0)
-        //       throw new ArithmeticException("I dont want to print zero");
-           if(j==0)
-              throw new NaseemException("I dont want to print zero");
-       
-        }catch(ArithmeticException e){
-            j=18/1;
-            System.out.println("This the default output "+e);
-        }catch(NaseemException e){
-             j=18/1;
-            System.out.println("This the default output "+e);
+        
+        A obj=new A();
+        try {
+            obj.show();
+        } catch (ClassNotFoundException e) {
+          
         }
-        catch(Exception e){
-            System.out.println("Something went wrong.. "+e);
-        }
-        System.out.println(j);
-        System.out.println("Bye");
      }
 }
