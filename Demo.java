@@ -3,11 +3,38 @@ enum Status{
 }
 class Demo{
      public static void main(String[] args) {
-      int i=5;
+    //   int i=5;
     //   Status s=Status.Running;
-      Status s[]=Status.values();
+    //   Status s[]=Status.values();
 
-      for(Status s1 :s)
-      System.out.println(s1 +": "+s1.ordinal());
+    //   for(Status s1 :s)
+    //   System.out.println(s1 +": "+s1.ordinal());
+
+      Status s=Status.Running;
+
+      switch (s) {
+        case Running:
+            System.out.println("All Good");
+            break;
+        case Failed:
+        System.out.println("Try Again");
+            break;
+        case Pending:
+        System.out.println("Please Wait");
+            break; 
+        default:
+            System.out.println("Done");
+            break;
+      }
+
+
+    //   if(s==Status.Running)
+    //     System.out.println("All Good");
+    //   if(s==Status.Failed)
+    //     System.out.println("Try Again");
+    //   if(s==Status.Pending)
+    //     System.out.println("Please Wait");
+    //   else
+    //     System.out.println("Done");
      }
 }
