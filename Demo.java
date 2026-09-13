@@ -1,28 +1,13 @@
-interface Computer{
-    public abstract void Code();
-}
-
-class Laptop implements Computer{
-    public void Code(){
-        System.out.println("Code,compile and run...");
-    }
-}
-class Desktop implements Computer{
-    public void Code(){
-        System.out.println("Code,compile and faster....");
-    }
-}
-class Developer{
-    public void devApp(Computer lap){
-        lap.Code();
-        System.out.println("Developing app.....");
-    }
+enum Status{
+    Running,Failed,Pending,Success;
 }
 class Demo{
      public static void main(String[] args) {
-        Computer lap =new Laptop();
-        Computer desk=new Desktop();
-       Developer dev=new Developer();
-       dev.devApp(desk);
+      int i=5;
+    //   Status s=Status.Running;
+      Status s[]=Status.values();
+
+      for(Status s1 :s)
+      System.out.println(s1 +": "+s1.ordinal());
      }
 }
