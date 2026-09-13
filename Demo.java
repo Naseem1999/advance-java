@@ -1,4 +1,9 @@
 
+class NaseemException extends  Exception{
+    public NaseemException(String message){
+          super(message);
+    }
+}
 class Demo{
      public static void main(String[] args) {
         // int i=0;
@@ -11,11 +16,16 @@ class Demo{
        
         try{
            j=18/i;
+        //    if(j==0)
+        //       throw new ArithmeticException("I dont want to print zero");
            if(j==0)
-              throw new ArithmeticException("I dont want to print zero");
+              throw new NaseemException("I dont want to print zero");
        
         }catch(ArithmeticException e){
             j=18/1;
+            System.out.println("This the default output "+e);
+        }catch(NaseemException e){
+             j=18/1;
             System.out.println("This the default output "+e);
         }
         catch(Exception e){
