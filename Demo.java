@@ -1,35 +1,19 @@
-@FunctionalInterface 
-interface A{//lamda expression only works with functional interfaces
-    // void show();
-    // void show(int i);
-    int add(int i,int j);
-}
 
 class Demo{
      public static void main(String[] args) {
-    //   A obj=new A() {
-    //     public void show(){
-    //         System.out.println("In a show");
-    //     }
-    //   };
-    //   A obj=() ->
-    //     {
-    //         System.out.println("In a show");
-    //     };
-    //   A obj=i ->System.out.println("In a show "+i);
-        
-      
+        // int i=0;
+        // int j=18/i;
+        // System.out.println(j);
+        // System.out.println("Bye");
 
-    //   obj.show(3);
-
-    // A obj=new A() {
-    //     public int add(int i,int j){
-    //         return i+j;
-    //     }
-    // };
-    A obj=(int i,int j)-> i+j;
-
-    int res=obj.add(3,4);
-    System.out.println(res);
+        int i=0;
+        int j=0;
+        try{
+           j=18/i;
+        }catch(Exception e){
+            System.out.println("Something went wrong");
+        }
+        System.out.println(j);
+        System.out.println("Bye");
      }
 }
