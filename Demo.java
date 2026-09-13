@@ -1,28 +1,21 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
-class A{
-    // public void show(){
-    //     try{
-    //      Class.forName("Calc");
-    //     }catch(ClassNotFoundException e){
-    //        System.out.println("Not able to find class");
-    //     }
-    // }
-    public void show() throws ClassNotFoundException{
-         Class.forName("Calc");
-      
-    }
-}
 class Demo{
-    static {
-        System.out.println("class loaded");
-    }
-     public static void main(String[] args) {
-        
-        A obj=new A();
-        try {
-            obj.show();
-        } catch (ClassNotFoundException e) {
-          
-        }
+    
+     public static void main(String[] args) throws IOException {
+        System.out.println("Hello");
+        // int num=System.in.read();
+        // InputStreamReader in=new InputStreamReader(System.in);
+        // BufferedReader bf=new BufferedReader(in);
+        // int num=Integer.parseInt(bf.readLine());
+        //  System.out.println(num);
+        //  bf.close();
+
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        System.out.println(num);
      }
 }
