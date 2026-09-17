@@ -1,40 +1,64 @@
 import java.util.ArrayList;
 
+class Student{
+    private int id;
+    private String name;
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+}
+
+class Employee{
+    private int id;
+    private String name;
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+}
 public class Demo {
    public static void main(String[] args) {
-    String names[]=new String[5];
-  //Type safety
-    // names[0]="Rohan";
-    // names[1]="rohit";
-    // names[2]="Haneen";
     
-    // names[3]=3;
-    // String name1=names[0];
-    // String name2=names[1];
-
+    Student st1=new Student(1,"Rohan" );
+    Student st2=new Student(2,"Rohit" );
     
-     ArrayList<String> list=new ArrayList<>();  //Generics
+    // Employee emp=new Employee(1,"naseem");
 
-     list.add("Rohan");
-     list.add("Ramish");
-     list.add("Roman");
-    //  list.add(10);
-    
-
-    String name1=list.get(0);
-    String name2=list.get(1);
-    String name3=list.get(2);
-      System.out.println(name1.toUpperCase());
-      System.out.println(name2.toUpperCase());
-      System.out.println(name3.toUpperCase());
-
-
-    //  String name1=(String)list.get(0);
-    //  System.out.println(name1.toUpperCase());
-    //  String name2=(String)list.get(3);
-    //  System.out.println(name2.toUpperCase());
-
-
+    ArrayList<Student> list=new ArrayList<>();
+    list.add(st1);
+    list.add(st2);
+    // list.add(emp);
+    for(Student s: list){
+        System.out.println(s);
+    }
 
    }
     
