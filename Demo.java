@@ -1,33 +1,44 @@
 import java.util.ArrayList;
 
-class Student1<T>{
-    T obj;
-    Student1(T obj){
-     this.obj=obj;
-    }
+class Humman{
+    public void sleep(){
+         System.out.println("Humans need to sleep well...");
 
-    public void disp(){
-        System.out.println("Type of data here T: "+obj.getClass().getName());
     }
+}
+class Employee extends Humman{
+    @Override 
+    public void sleep(){
+         System.out.println("Employees need to sleep well to stay productive...");
 
-    public T getObj(){
-        return  obj;
+
     }
-
 }
 
 public class Demo {
    public static void main(String[] args) {
+     
+    Humman humman=new Humman();
+    Employee emp1=new Employee();
     
-    Student1<Integer> st=new Student1<>(19);
-    Student1<String> st1=new Student1<>("Naseem");
+    humman=emp1;
 
-    st.disp();
-    System.out.println(st.getObj());
 
-    st1.disp();
-    System.out.println(st1.getObj());
+    // ArrayList<Humman> hummanList=new ArrayList<>();
+    // ArrayList<Employee> employeeList=new ArrayList<>();
 
+    //while using wild card its possible 
+    ArrayList<?> hummanList=new ArrayList<>();
+    ArrayList<Employee> employeeList=new ArrayList<>();
+
+    hummanList=employeeList;  //not happen in array list
+
+
+   ArrayList<Humman> hummanList2=new ArrayList<>();
+
+
+    System.out.println(hummanList);
+    hummanList=hummanList2;
    }
     
 }
