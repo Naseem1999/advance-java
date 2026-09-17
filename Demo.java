@@ -1,64 +1,32 @@
 import java.util.ArrayList;
 
-class Student{
-    private int id;
-    private String name;
-    public Student(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+class Student1<T>{
+    T obj;
+    Student1(T obj){
+     this.obj=obj;
     }
 
-    
+    public void disp(){
+        System.out.println("Type of data here T: "+obj.getClass().getName());
+    }
+
+    public T getObj(){
+        return  obj;
+    }
+
 }
 
-class Employee{
-    private int id;
-    private String name;
-    public Employee(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-}
 public class Demo {
    public static void main(String[] args) {
     
-    Student st1=new Student(1,"Rohan" );
-    Student st2=new Student(2,"Rohit" );
-    
-    // Employee emp=new Employee(1,"naseem");
+    Student1<Integer> st=new Student1<>(19);
+    Student1<String> st1=new Student1<>("Naseem");
 
-    ArrayList<Student> list=new ArrayList<>();
-    list.add(st1);
-    list.add(st2);
-    // list.add(emp);
-    for(Student s: list){
-        System.out.println(s);
-    }
+    st.disp();
+    System.out.println(st.getObj());
+
+    st1.disp();
+    System.out.println(st1.getObj());
 
    }
     
